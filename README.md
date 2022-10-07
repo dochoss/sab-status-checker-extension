@@ -1,5 +1,5 @@
-# Bookmark Searcher
-Chrome and Edge extension for searching bookmarks
+# SABnzbd Status Checker
+Chrome and Edge extension for monitoring a SABnzbd queue
 
 Steps to install
 1. Download the files from this repo
