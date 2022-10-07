@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Sab Status</title>
+  <link rel="stylesheet" href="../lib/bootstrap.min.css" />
+  <!-- <link rel="stylesheet" href="popup.css" /> -->
+</head>
+
+<body>
+  <div class="container p-2" style="width: 200px">
+    <div class="row">
+      <div class="col-12 d-flex">
+        <p class="m-auto">Sab Status</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 d-flex small mb-2 small">
+        <p class="m-auto">Status: <span id="status" class="text-danger">Stopped</span></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="d-flex flex-column small mb-2">
+        <label for="usessl">URL</label>
+        <input type="text" class="form-control form-control-sm ml-2" id="url" placeholder="URL" />
+        <div class="form-check">
+          <label for="usessl" class="my-auto form-check-label mr-2">Use SSL</label>
+          <input type="checkbox" class="form-check-input ml-2" id="usessl" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="d-flex flex-column small mb-2">
+        <label for="interval" class="my-auto">Interval (in ms)</label>
+        <input type="text" class="form-control form-control-sm ml-2" id="interval" placeholder="Interval" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="d-flex flex-column small mb-2">
+        <label for="interval" class="my-auto">API Key</label>
+        <input type="text" class="form-control form-control-sm ml-2" id="apikey" placeholder="Interval" />
+        <p class="small mb-0">Key is not stored after starting</p>
+      </div>
+    </div>
+    <div class="row mb-2">
+      <div class="col-12 d-flex">
+        <p class="m-auto text-danger" id="error"></span></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 d-flex justify-content-center">
+        <button id="btnStart" class="btn btn-success">Start</button>
+      </div>
+      <div class="col-6 d-flex justify-content-center">
+        <button id="btnStop" class="btn btn-danger">Stop</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./popup.js"></script>
+  <script src="../background/background.js"></script>
+</body>
+
+</html>
