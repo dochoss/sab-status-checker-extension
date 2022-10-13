@@ -17,9 +17,8 @@ document.getElementById("btnStart").addEventListener("click", function() {
   localStorage.setItem("url", url);
   localStorage.setItem("interval", interval);
   
-  chrome.extension
-    .getBackgroundPage()
-    .startRequest(url, apiKey, interval);
+  let bgPage = chrome.extension.getBackgroundPage();
+  bgPage.startRequest(url, apiKey, interval);
   setStatus("Running", "text-success");
   document.getElementById("error").innerHTML = "";
 
@@ -61,9 +60,8 @@ window.onload = function() {
 }
 
 function stopRunningRequest() {
-  chrome.extension
-    .getBackgroundPage()
-    .stopRequest();
+  let bgPage = chrome.extension.getBackgroundPage();
+  bgPage.stopRequest();
   setStatus("Stopped", "text-danger");
 }
 

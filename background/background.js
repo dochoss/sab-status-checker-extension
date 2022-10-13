@@ -31,7 +31,7 @@ function startRequest(url, apiKey, interval) {
         var queueSize = queue.queue.slots.length;
         var queueStatus = queue.queue.status;
         var queueText = queueSize.toString();
-        var pctComplete = (100 - (Math.round((Number(queue.queue.mbleft) / Number(queue.queue.mb)) * 100))) + ' \%'
+        var pctComplete = 100 - (Math.round((Number(queue.queue.slots[0].mbleft) / Number(queue.queue.slots[0].mb) * 100)))
 
         if (queueStatus === "Paused") {
             setBadgeBackgroundColor([255, 0, 0, 255]);
@@ -40,7 +40,7 @@ function startRequest(url, apiKey, interval) {
         }
     
         if (queueSize > 0) {
-            setBadgeText(queueText + ' - ' + pctComplete);
+            setBadgeText(queueText + '-' + pctComplete + '%');
         } else {
             setBadgeText("");
         }        
